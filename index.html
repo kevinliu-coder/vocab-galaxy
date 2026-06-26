@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocab-Galaxy · 词汇星系</title>
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <style>
+    .hero { text-align: center; padding: 40px 0 20px; }
+    .hero h1 { font-size: 36px; background: linear-gradient(135deg, #4da6ff, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: #888; margin-top: 4px; font-size: 15px; }
+    #start-review-btn {
+      display: block;
+      margin: 24px auto;
+      padding: 18px 60px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #4da6ff);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    #start-review-btn:hover { transform: scale(1.03); opacity: 0.9; }
+    .section { margin-bottom: 32px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1>🌌 Vocab-Galaxy</h1>
+      <p>词汇量 5000 → 20000 · 间隔重复 · AI 驱动</p>
+    </div>
+
+    <button id="start-review-btn">🚀 开始</button>
+
+    <div class="section" id="stats-area">
+      <div style="text-align:center;color:#888;padding:24px">加载中...</div>
+    </div>
+
+    <div class="section">
+      <h3>📊 Band 进度</h3>
+      <div id="bands-area" style="color:#888">加载中...</div>
+    </div>
+
+    <div class="section" id="settings-area">
+      <div style="text-align:center;color:#888;padding:24px">加载设置...</div>
+    </div>
+  </div>
+
+  <script src="assets/data/bundle.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script>
+    (async function() {
+      await VG.init();
+      VGDashboard.init();
+    })();
+  </script>
+</body>
+</html>

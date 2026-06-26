@@ -1,0 +1,86 @@
+{
+ "generated": "2026-06-26T16:04:30",
+ "total": 11709,
+ "bands": [
+  {
+   "id": 5,
+   "title": "Rank 5000–5999",
+   "count": 773
+  },
+  {
+   "id": 6,
+   "title": "Rank 6000–6999",
+   "count": 798
+  },
+  {
+   "id": 7,
+   "title": "Rank 7000–7999",
+   "count": 770
+  },
+  {
+   "id": 8,
+   "title": "Rank 8000–8999",
+   "count": 800
+  },
+  {
+   "id": 9,
+   "title": "Rank 9000–9999",
+   "count": 780
+  },
+  {
+   "id": 10,
+   "title": "Rank 10000–10999",
+   "count": 778
+  },
+  {
+   "id": 11,
+   "title": "Rank 11000–11999",
+   "count": 767
+  },
+  {
+   "id": 12,
+   "title": "Rank 12000–12999",
+   "count": 765
+  },
+  {
+   "id": 13,
+   "title": "Rank 13000–13999",
+   "count": 761
+  },
+  {
+   "id": 14,
+   "title": "Rank 14000–14999",
+   "count": 771
+  },
+  {
+   "id": 15,
+   "title": "Rank 15000–15999",
+   "count": 800
+  },
+  {
+   "id": 16,
+   "title": "Rank 16000–16999",
+   "count": 772
+  },
+  {
+   "id": 17,
+   "title": "Rank 17000–17999",
+   "count": 822
+  },
+  {
+   "id": 18,
+   "title": "Rank 18000–18999",
+   "count": 766
+  },
+  {
+   "id": 19,
+   "title": "Rank 19000–19999",
+   "count": 785
+  },
+  {
+   "id": 20,
+   "title": "Rank 20000–20999",
+   "count": 1
+  }
+ ]
+}

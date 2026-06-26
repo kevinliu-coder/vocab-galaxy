@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复习 · Vocab-Galaxy</title>
+  <link rel="stylesheet" href="assets/css/dark.css">
+</head>
+<body>
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0">
+      <a href="index.html" style="color:#4da6ff;font-size:14px">← 返回</a>
+      <div id="review-stats" style="font-size:14px;color:#aaa">加载中...</div>
+      <div style="font-size:13px;color:#888" id="scheduler-badge"></div>
+    </div>
+    <div id="review-card">
+      <div class="word-card">
+        <div class="loading" style="color:#888">正在准备复习队列...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/data/bundle.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/ai-engine.js"></script>
+  <script src="assets/js/ai-vocab.js"></script>
+  <!-- 普通脚本即可：动态 import() 在 classic script 中也可用，且能从 file:// 加载 -->
+  <script src="assets/js/srs.js"></script>
+  <script src="assets/js/review.js"></script>
+  <script>
+    // Warm up speech synthesis
+    speechSynthesis.getVoices();
+    speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+
+    (async function() {
+      try {
+        await VG.init();
+        if (typeof VGSRS === 'undefined') await new Promise(r => setTimeout(r, 500));
+        await VGSRS.init();
+        document.getElementById('scheduler-badge').textContent = VGSRS.getMode().toUpperCase();
+        await VGReview.init();
+      } catch(e) {
+        document.getElementById('review-card').innerHTML = `
+          <div class="word-card">
+            <div class="word-spell" style="font-size:24px;color:#ff4444">⚠️ 初始化失败</div>
+            <pre style="margin:16px 0;font-size:13px;color:#ff8c00;white-space:pre-wrap;word-break:break-all">${e.message}\n${e.stack || ''}</pre>
+            <button class="btn btn-primary" onclick="location.reload()">重试</button>
+            <a href="index.html" style="display:block;margin-top:12px;color:#4da6ff">← 返回首页</a>
+          </div>
+        `;
+      }
+    })();
+  </script>
+</body>
+</html>
